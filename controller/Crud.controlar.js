@@ -4,16 +4,21 @@ const Drinksmoadel =require('../modal/user.modal');
 
 
 const creatUser = async (req,res)=>{
-    let datafrombody =req.body;
-    let newUser =await new Drinksmoadel(datafrombody);
-    try{ 
-        newUser.save();
-    res.send(newUser);
-}
-    catch(err){
-        console.log(err);
-        res.send(err);
-    }
+//     let datafrombody =req.body;
+//     let newUser =await new Drinksmoadel(datafrombody);
+//     try{ 
+//         newUser.save();
+//     res.send(newUser);
+// }
+//     catch(err){
+//         console.log(err);
+//         res.send(err);
+//     }
+let datafrombody = req.body;
+let newUser =  Drinksmoadel(datafrombody);
+newUser.save();
+let data = await Drinksmoadel.find({});
+res.status(201).json(data);
 };
 
 const getUser = (req,res)=>{
