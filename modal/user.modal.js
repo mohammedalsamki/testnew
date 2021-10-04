@@ -3,12 +3,9 @@
 const mongoose =require('mongoose');
 //Creat schema
 const drinksSchema= mongoose.Schema({
-   title:{
-       type :String,
-       unique : true,
-   },
-   img:String,
-   id:String,
+    strDrink:String,
+   strDrinkThumb:String,
+   idDrink:String,
 })
 const Drinksmoadel =mongoose.model('drinks_schima',drinksSchema);
 
