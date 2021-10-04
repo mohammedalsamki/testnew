@@ -33,9 +33,9 @@ const updateUser = async(req,res)=>{
     let fruteid = req.params.id;
     let update = req.body;
     Drinksmoadel.findOne({ _id: fruteid }).then(item => {
-        item.title = update.title,
-            item.img = update.img,
-            item.id = update.id
+        item.strDrink = update.strDrink,
+            item.strDrinkThumb = update.strDrinkThumb,
+            item.idDrink = update.idDrink
         item.save();
     });
     let up = await Drinksmoadel.find({});
